@@ -4,7 +4,7 @@
 author = "Exile Mod Team";
 onLoadName = "Exile Mod";
 onLoadMission= "www.exilemod.com";
-loadScreen = "exile_assets\texture\mod\logo.paa"; 
+loadScreen = "logo.paa"; 
 disableChannels[] = {0, 2};
 OnLoadIntro = "";
 OnLoadIntroTime = false;
@@ -64,24 +64,12 @@ showHUD[] =
     false   // Squad Radar
 };
 
-#include "config.cpp"
-
-class CfgRemoteExec
+class RscTitles
 {
-    class Functions
-    {
-        mode = 1;
-        jip = 0;
-
-        class ExileServer_system_network_dispatchIncomingMessage
-        {
-            allowedTargets = 2;
-        };
-    };
-
-    class Commands
-    {
-        mode = 0;
-        jip = 0;
-    };
+	#include "addons\StatusBar\statusBar.hpp"
+	#include "VEMFr_client\gui\RscDisplayVEMFrClient.hpp"
+	#include "VEMFr_client\gui\RscDisplayBaseAttack.hpp"
 };
+#include "config.cpp"
+#include "CfgRemoteExec.hpp"
+#include "infiSTAR_AdminMenu.hpp"
